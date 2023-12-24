@@ -787,9 +787,9 @@ char *_getHaveVFDSymbol()
 
 char *_getDBoxLCD()
 {
-	if(strcmp(HAVE_DBOXLCD, "False") == 0)
+	if(strcmp(SUPPORT_DBOXLCD, "False") == 0)
 		return strdup("");
-	return strdup(HAVE_DBOXLCD);
+	return strdup(SUPPORT_DBOXLCD);
 }
 
 char *_getHaveTranscoding1()
