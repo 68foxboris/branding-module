@@ -29,6 +29,7 @@ MAKE_STRING_FUNCTION(getMachineMKUBIFS)
 MAKE_STRING_FUNCTION(getMachineUBINIZE)
 MAKE_STRING_FUNCTION(getBoxType)
 MAKE_STRING_FUNCTION(getBrandOEM)
+MAKE_STRING_FUNCTION(getBrand)
 MAKE_STRING_FUNCTION(getOEVersion)
 MAKE_STRING_FUNCTION(getDriverDate)
 MAKE_STRING_FUNCTION(getImageVersion)
@@ -53,6 +54,13 @@ MAKE_STRING_FUNCTION(getHaveHDMIinHD)
 MAKE_STRING_FUNCTION(getHaveHDMIinFHD)
 MAKE_STRING_FUNCTION(getHaveWOL)
 MAKE_STRING_FUNCTION(getHaveWWOL)
+MAKE_STRING_FUNCTION(getRCType)
+MAKE_STRING_FUNCTION(getRCName)
+MAKE_STRING_FUNCTION(getRCIDNum)
+MAKE_STRING_FUNCTION(getSoCFamily)
+MAKE_STRING_FUNCTION(getBlindscanBin)
+MAKE_STRING_FUNCTION(getHaveVFDSymbol)
+MAKE_STRING_FUNCTION(getDBoxLCD)
 MAKE_STRING_FUNCTION(getHaveTranscoding1)
 MAKE_STRING_FUNCTION(getHaveTranscoding2)
 MAKE_STRING_FUNCTION(getHaveCI)
@@ -71,6 +79,7 @@ static PyMethodDef boxbrandingMethods[] = {
 	{ "getMachineMKUBIFS", getMachineMKUBIFS, METH_NOARGS, NULL },
 	{ "getMachineUBINIZE", getMachineUBINIZE, METH_NOARGS, NULL },
 	{ "getBoxType", getBoxType, METH_NOARGS, NULL },
+	{ "getBrand", getBrand, METH_NOARGS, NULL },
 	{ "getBrandOEM", getBrandOEM, METH_NOARGS, NULL },
 	{ "getOEVersion", getOEVersion, METH_NOARGS, NULL },
 	{ "getDriverDate", getDriverDate, METH_NOARGS, NULL },
@@ -96,6 +105,13 @@ static PyMethodDef boxbrandingMethods[] = {
 	{ "getHaveHDMIinFHD", getHaveHDMIinFHD, METH_NOARGS, NULL },
 	{ "getHaveWOL", getHaveWOL, METH_NOARGS, NULL },
 	{ "getHaveWWOL", getHaveWWOL, METH_NOARGS, NULL },
+	{ "getRCType", getRCType, METH_NOARGS, NULL },
+	{ "getRCName", getRCName, METH_NOARGS, NULL },
+	{ "getRCIDNum", getRCIDNum, METH_NOARGS, NULL },
+	{ "getSoCFamily", getSoCFamily, METH_NOARGS, NULL },
+	{ "getBlindscanBin", getBlindscanBin, METH_NOARGS, NULL },
+	{ "getHaveVFDSymbol", getHaveVFDSymbol, METH_NOARGS, NULL },
+	{ "getDBoxLCD", getDBoxLCD, METH_NOARGS, NULL },
 	{ "getHaveTranscoding1", getHaveTranscoding1, METH_NOARGS, NULL },
 	{ "getHaveTranscoding2", getHaveTranscoding2, METH_NOARGS, NULL },
 	{ "getHaveCI", getHaveCI, METH_NOARGS, NULL },

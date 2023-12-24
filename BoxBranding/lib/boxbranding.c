@@ -474,6 +474,11 @@ char *_getMachineName()
 	return strdup(MACHINE_NAME);
 }
 
+char *_getBrand()
+{
+	return strdup(MACHINE_BRAND);
+}
+
 char *_getMachineBrand()
 {
 	return strdup(MACHINE_BRAND);
@@ -664,6 +669,127 @@ char *_getHaveWWOL()
 	if(strcmp(HAVE_WOL, "False") == 0)
 		return strdup("");
 	return strdup(HAVE_WWOL);
+}
+
+char *_getRCType()
+{
+	return strdup(RCTYPE);
+}
+
+char *_getRCName()
+{
+	char *boxtype_name = NULL;
+	if(strcmp(RCNAME, "ini0") == 0)
+	{
+		boxtype_name = ReadProcEntry("/proc/stb/info/boxtype");
+		if(strcmp(boxtype_name, "ini-3000") == 0)
+		{
+			free(boxtype_name);
+			boxtype_name = ReadProcEntry("/proc/stb/fp/version");
+			if(startsWith(boxtype_name, "1"))
+			{
+				free(boxtype_name);
+				return strdup(RCNAME);
+			}
+			else
+			{
+				free(boxtype_name);
+				return strdup("ini2");
+			}
+		}
+		else if(strcmp(boxtype_name, "ini-5000") == 0)
+		{
+			free(boxtype_name);
+			return strdup("ini1");
+		}
+		else if(strcmp(boxtype_name, "ini-7000") == 0)
+		{
+			free(boxtype_name);
+			return strdup("ini1");
+		}
+		else if(strcmp(boxtype_name, "ini-7012") == 0)
+		{
+			free(boxtype_name);
+			return strdup("ini1");
+		}
+	}
+	else if(strcmp(RCNAME, "et9x00") == 0)
+	{
+		boxtype_name = ReadProcEntry("/proc/stb/info/boxtype");
+		if(strcmp(boxtype_name, "et9500") == 0)
+		{
+			free(boxtype_name);
+			return strdup("et9500");
+		}
+		else
+		{
+			free(boxtype_name);
+			return strdup(RCNAME);
+		}
+	}
+	else if(strcmp(RCNAME, "et6x00") == 0)
+	{
+		boxtype_name = ReadProcEntry("/proc/stb/info/boxtype");
+		if(strcmp(boxtype_name, "et6500") == 0)
+		{
+			free(boxtype_name);
+			return strdup("et6500");
+		}
+		else
+		{
+			free(boxtype_name);
+			return strdup(RCNAME);
+		}
+	}
+	else if(strcmp(RCNAME, "azboxhd") == 0)
+	{
+		boxtype_name = ReadProcEntry("/proc/stb/info/model");
+		if(strcmp(boxtype_name, "elite") == 0)
+		{
+			free(boxtype_name);
+			return strdup("azboxelite");
+		}
+		else if(strcmp(boxtype_name, "ultra") == 0)
+		{
+			free(boxtype_name);
+			return strdup("azboxelite");
+		}
+		else
+		{
+			free(boxtype_name);
+			return strdup(RCNAME);
+		}
+	}
+	return strdup(RCNAME);
+}
+
+char *_getRCIDNum()
+{
+	return strdup(RCIDNUM);
+}
+
+char *_getSoCFamily()
+{
+	return strdup(SOCFAMILY);
+}
+
+char *_getBlindscanBin()
+{
+	return strdup(BLINDSCANBINARY);
+}
+
+char *_getHaveVFDSymbol()
+{
+	if(strcmp(HAVE_VFDSYMBOL, "False") == 0)
+		return strdup("");
+	return strdup(HAVE_VFDSYMBOL);
+}
+
+char *_getDBoxLCD()
+{
+	if(strcmp(HAVE_DBOXLCD, "False") == 0)
+		return strdup("");
+	return strdup(HAVE_DBOXLCD);
 }
 
 char *_getHaveTranscoding1()
