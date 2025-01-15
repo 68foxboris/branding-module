@@ -497,7 +497,7 @@ SUBDIRS += ini6
 endif
 
 if VUSOLO
-SUBDIRS += vu
+SUBDIRS += vu1
 endif
 
 if VUSOLOSE
