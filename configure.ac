@@ -743,6 +743,7 @@ BoxBranding/remotes/vu/Makefile
 BoxBranding/remotes/vu2/Makefile
 BoxBranding/remotes/vu3/Makefile
 BoxBranding/remotes/vu4/Makefile
+BoxBranding/remotes/vu6/Makefile
 BoxBranding/remotes/wetek/Makefile
 BoxBranding/remotes/wetek2/Makefile
 BoxBranding/remotes/wetek3/Makefile
