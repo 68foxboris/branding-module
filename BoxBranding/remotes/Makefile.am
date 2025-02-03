@@ -549,7 +549,7 @@ SUBDIRS += vu4
 endif
 
 if VUDUO4KSE
-SUBDIRS += vu4
+SUBDIRS += vu6
 endif
 
 if VUULTIMO4K
